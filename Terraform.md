@@ -74,7 +74,7 @@ gs://<BUCKET_NAME>: Enabled
 #### Use your values instead of placeholders in main.tf file
 * <PROJECT_ID> - GCP project ID. Example: `possible-symbol-254507`
 * <BUCKET_NAME> - Storage for Terraform state/lock—should be unique. Example: `github-gke-terraform-demo`
-* <REGION> - Region where resources will be created. Example: `europe-west1`
-* <LOCATION> - Zone where resources will be created. Example: `europe-west1-b`
+* \<REGION\> - Region where resources will be created. Example: `europe-west1`
+* \<LOCATION\> - Zone where resources will be created. Example: `europe-west1-b`
 * <CLUSTER_NAME> - GKE cluster name. Example: `dev-cluster`
 * <NODES_POOL_NAME> - GKE worker nodes pool name. Example: `dev-cluster-node-pool`
