@@ -1,3 +1,19 @@
+/*
+  It's a Terraform file from article https://community.intersystems.com/post/automating-gke-creation-circleci-builds
+  Several placeholders are used here. See below their meaning:
+
+  ---------------------------------------------------------------------------------------------------
+  Placeholder       | Meaning                                           | Example
+  ---------------------------------------------------------------------------------------------------
+  <PROJECT_ID>      | GCP project ID                                    | possible-symbol-254507  
+  <BUCKET_NAME>     | Storage for Terraform state/lock—should be unique | circleci-gke-terraform-demo
+  <REGION>          | Region where resources will be created            | europe-west1
+  <LOCATION>        | Zone where resources will be created              | europe-west1-b
+  <CLUSTER_NAME>    | GKE cluster name                                  | dev-cluster
+  <NODES_POOL_NAME> | GKE worker nodes pool name                        | dev-cluster-node-pool 
+  ---------------------------------------------------------------------------------------------------
+*/
+
 terraform {
   required_version = "~> 0.12"
   backend "gcs" {
