@@ -38,7 +38,7 @@
   $ gsutil versioning get gs://<BUCKET_NAME>
   gs://<BUCKET_NAME>: Enabled
 
-/*
+*/
 
 terraform {
   required_version = "~> 0.12"
