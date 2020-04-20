@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: gce
+#    kubernetes.io/ingress.allow-http: "false"
+    networking.gke.io/managed-certificates: zpm-registry-certificate
+    external-dns.alpha.kubernetes.io/hostname: zpm.myardyas.online
+  name: zpm-registry
+  namespace: iris
+spec:
+  rules:
+  - host: zpm.myardyas.online
+    http:
+      paths:
+      - backend:
+          serviceName: zpm-registry
+          servicePort: 52773
+        path: /*

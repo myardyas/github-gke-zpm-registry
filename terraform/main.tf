@@ -43,27 +43,27 @@
 terraform {
   required_version = "~> 0.12"
   backend "gcs" {
-    bucket      = "<BUCKET_NAME>"
+    bucket      = "github-gke-terraform-demo"
     prefix      = "terraform/state"
   }
 }
 
 provider "google" {
-  project     = "<PROJECT_ID>"
-  region      = "<REGION>"
+  project     = "possible-symbol-254507"
+  region      = "europe-west1"
 }
 
 resource "google_container_cluster" "gke-cluster" {
-  name                     = "<CLUSTER_NAME>"
-  location                 = "<LOCATION>"
+  name                     = "dev-cluster"
+  location                 = "europe-west1-b"
   remove_default_node_pool = true
   # In regional cluster (location is region, not zone) this is a number of nodes per zone
   initial_node_count = 1
 }
 
 resource "google_container_node_pool" "preemptible_node_pool" {
-  name     = "<NODES_POOL_NAME>"
-  location = "<LOCATION>"
+  name     = "dev-cluster-node-pool"
+  location = "europe-west1-b"
   cluster  = google_container_cluster.gke-cluster.name
   # In regional cluster (location is region, not zone) this is a number of nodes per zone
   node_count = 1
